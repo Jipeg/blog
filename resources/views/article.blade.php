@@ -13,4 +13,18 @@
         @if ($article['created_at'])
             <p class="italic mt-2">Created at: {{$article['created_at']}}</p>
         @endif
+
+        <div class="mt-4">
+            <h3>Comments:</h3>
+            @if (!$comments)
+                <div>No comments yet</div>
+            @else
+                @foreach ($comments as $comment)
+                    <div class="border mb-2 p-2">
+                        <h4>{{$comment['author']}} wrote:</h4>
+                        <p>{{$comment['content']}}</p>
+                    </div>
+                @endforeach
+            @endif
+        </div>
 </x-layout>

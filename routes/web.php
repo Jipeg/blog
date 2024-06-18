@@ -33,5 +33,6 @@ Route::get('/articles', function () {
 
 Route::get('/articles/{id}', function ($id) {
     $article = Article::find($id);
-    return view('article', ['article' => $article]);
+    $comments = [['author' => 'nick', 'content' => 'nice story, bro!']];
+    return view('article', ['article' => $article, 'comments' => $comments]);
 });
