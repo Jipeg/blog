@@ -8,6 +8,6 @@
         <p>Required skills are: {{$job['skills']}}.</p>
     @endif
     @if (isset($job['link']))
-        <a href="$job['link']" class="text-blue-500 hover:underline">Become {{$job['title']}} now</a>
+        <a target ="_blank" href="//www.{{$job['link']}}" class="text-blue-500 hover:underline">Become {{$job['title']}} now</a>
     @endif
 </x-layout>
